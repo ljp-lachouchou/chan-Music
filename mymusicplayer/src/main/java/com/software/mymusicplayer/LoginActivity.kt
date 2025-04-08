@@ -20,6 +20,7 @@ import com.software.mymusicplayer.entity.User
 import com.software.mymusicplayer.manager.UserDatabaseManager
 import com.software.mymusicplayer.service.RedisService
 import com.software.mymusicplayer.utils.HashPass
+import com.software.mymusicplayer.utils.NetworkUtils
 import com.software.mymusicplayer.utils.RedisClient
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
@@ -38,6 +39,9 @@ class LoginActivity : BaseActivity() {
     private lateinit var login:Button
     private lateinit var register:Button
     private lateinit var userDataBase: UserDataBase
+    private lateinit var updateLayout:View
+    private lateinit var realLayout:View
+    val networkUtils = NetworkUtils(this)
     private val currentTime = Timestamp(System.currentTimeMillis())
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.Theme_MyApplication)
@@ -48,11 +52,20 @@ class LoginActivity : BaseActivity() {
     }
 
     override fun initView() {
+        updateLayout = findViewById(R.id.update_layout_login)
+        realLayout = findViewById(R.id.real_layout_login)
+        if (!networkUtils.isNetworkAvailable()){
+            realLayout.visibility = View.GONE
+            updateLayout.visibility = View.VISIBLE
+            return
+        }else {
+            updateLayout.visibility = View.GONE
+            realLayout.visibility = View.VISIBLE
+        }
         register = findViewById(R.id.register)
         login = findViewById(R.id.login)
         userName = findViewById(R.id.user_name_ed)
         pwd = findViewById(R.id.password_ed)
-
         val sharedPreferences = getSharedPreferences("auto_login", MODE_PRIVATE)
         val userNam = sharedPreferences.getString("userName", "0")
         val userPwd = sharedPreferences.getString("userPwd","0")
@@ -105,7 +118,6 @@ class LoginActivity : BaseActivity() {
     }
 
     private fun loginClick() {
-
         lifecycleScope.launch(Dispatchers.IO){
             val userTest = async {
                 userDataBase.getUserDao().queryUserByUserName(userName.text.toString())
@@ -181,6 +193,17 @@ class LoginActivity : BaseActivity() {
         }
     }
 
-    override fun getLayoutId(): Int = R.layout.activity_login
+    override fun onResume() {
+
+        initView()
+        super.onResume()
+    }
+    override fun getLayoutId(): Int=
+        R.layout.activity_login
+
+    fun reload(view: View) {
+        initView()
+    }
+
 
 }
