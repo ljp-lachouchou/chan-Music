@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:paddingLeft="25dp"
+    android:paddingRight="25dp"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/avatar_img"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:background="@drawable/dialog_background"
+        android:src="@drawable/baseline_self_improvement_24"
+        app:layout_constraintBottom_toTopOf="@+id/user_name_ed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:gravity="center"
+        android:text="禅Music"
+        android:textColor="@color/flesh"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@+id/user_name_ed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/avatar_img" />
+    <EditText
+        android:id="@+id/user_name_ed"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/login_edit_text"
+        android:paddingLeft="10dp"
+        android:hint="用户名"
+        android:layout_margin="5dp"
+        android:textColorHint="@color/light_grey"
+        />
+
+    <EditText
+        android:id="@+id/password_ed"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@drawable/login_edit_text"
+        android:hint="密码"
+        android:paddingLeft="10dp"
+        android:layout_margin="5dp"
+        android:inputType="textPassword"
+        android:textColorHint="@color/light_grey"
+        app:layout_constraintTop_toBottomOf="@id/user_name_ed"
+         />
+    <Button
+        android:id="@+id/login"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@drawable/dialog_background"
+        android:text="登录"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="@color/flesh"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/password_ed" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="忘记密码?"
+        android:textColor="@color/start_red"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password_ed" />
+
+    <Button
+        android:id="@+id/register"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@drawable/dialog_background"
+        android:textColor="@color/flesh"
+        android:text="注册"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

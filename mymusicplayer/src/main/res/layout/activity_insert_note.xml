@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:paddingBottom="10dp"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/baseline_chevron_left_24" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/image_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <LinearLayout
+        android:onClick="insertImage"
+        android:id="@+id/add_button"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="8dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:background="@color/grey"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_recycler">
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/baseline_add_24" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="添加照片"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/note_title_ed"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@null"
+        android:hint="给笔记取个合适的标题吧"
+        android:textColorHint="@color/light_grey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_button" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:layout_marginTop="4dp"
+        android:paddingTop="20dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/note_title_ed">
+
+        <EditText
+            android:id="@+id/note_content_ed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:hint="添加正文"
+            android:textColorHint="@color/light_grey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </ScrollView>
+    <LinearLayout
+        android:id="@+id/insert_music_linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2">
+        <ImageView
+            android:id="@+id/music_img"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:layout_weight="2"
+            android:src="@drawable/baseline_music_video_24" />
+        <TextView
+            android:id="@+id/music_title"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:layout_weight="7"
+            android:gravity="center_vertical"
+            android:text="添加音乐"
+            android:textSize="20sp"
+            android:textColor="@color/grey" />
+
+        <ImageView
+            android:id="@+id/music_button"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:layout_weight="1"
+            android:clickable="false"
+            android:src="@drawable/baseline_chevron_right_24" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+        <ImageView
+            android:layout_width="0dp"
+            android:id="@+id/pre_eyes"
+            android:layout_height="?attr/actionBarSize"
+            android:clickable="false"
+            android:foreground="#72F3EBF4"
+            android:src="@drawable/baseline_remove_red_eye_24"
+            android:layout_weight="2"/>
+        <Button
+            android:id="@+id/note_insert"
+            android:layout_width="0dp"
+            android:background="@drawable/dialog_background"
+            android:layout_height="?attr/actionBarSize"
+            android:text="发布笔记"
+            android:foreground="#42F3EBF4"
+            android:textColor="@color/grey"
+            android:textSize="20sp"
+            android:clickable="false"
+            android:layout_weight="8"/>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

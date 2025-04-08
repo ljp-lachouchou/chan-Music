@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.software.mymusicplayer.view.ShrinkLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="2dp"
+    android:layout_width="match_parent"
+    android:id = "@+id/song_item_eye"
+    android:foreground="@drawable/play_music_fragment_background"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/song_item_img_eye"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/baseline_play_arrow_24"
+        app:layout_constraintBottom_toBottomOf="@+id/song_item_img_eye"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/song_item_title_eye"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:text="……………………"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@id/song_item_img_eye"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/song_item_artist_eye"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:text="………………"
+        android:textSize="10sp"
+
+        app:layout_constraintLeft_toRightOf="@id/song_item_img_eye"
+        app:layout_constraintTop_toBottomOf="@+id/song_item_title_eye" />
+
+</com.software.mymusicplayer.view.ShrinkLayout>

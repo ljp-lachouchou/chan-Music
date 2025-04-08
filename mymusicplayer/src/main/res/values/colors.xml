@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="red">#DB300B</color>
+    <color name="center_red">#E24421</color>
+    <color name="start_red">#ED5433</color>
+    <color name="flesh">#cebaba</color>
+    <color name="light_gray">#E7E1E1</color>
+    <color name="grey">#C7C2C2</color>
+    <color name="light_grey">#C8C0C0</color>
+    <color name="deep_white">#FAF6F6</color>
+    <color name="alpha_flesh">#D9BFBF</color>
+</resources>

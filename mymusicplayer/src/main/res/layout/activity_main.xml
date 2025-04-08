@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id = "@+id/activity_vp"
+        app:layout_constraintTop_toTopOf="@id/activity_tl"/>
+
+
+    <com.google.android.material.tabs.TabLayout
+        android:background="@color/light_gray"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:id="@+id/activity_tl"
+        app:tabMode="fixed"
+        app:tabSelectedTextColor="@color/flesh"
+        app:tabIconTintMode="multiply"
+        app:tabIconTint="@color/flesh"
+        app:tabBackground="@drawable/tab_background"
+        app:tabIndicatorHeight="0dp"
+        app:layout_constraintBottom_toBottomOf="parent" />
+    <androidx.fragment.app.FragmentContainerView
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:id = "@+id/play_music_fragment"
+        app:layout_constraintBottom_toTopOf="@id/activity_tl"
+        android:name="com.software.mymusicplayer.PlaySongFragment"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout="@layout/play_music_component"
+         />
+</androidx.constraintlayout.widget.ConstraintLayout>

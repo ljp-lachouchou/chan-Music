@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id = "@+id/find_search_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        layout="@layout/search_bar"/>
+    <ScrollView
+        android:layout_marginTop="?attr/actionBarSize"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/find_search_bar">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:textSize="18sp"-->
+<!--                android:paddingStart="24dp"-->
+<!--                android:paddingEnd="24dp"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:text="搜索历史"/>-->
+<!--            <androidx.recyclerview.widget.RecyclerView-->
+<!--                android:id="@+id/history_search"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:paddingStart="24dp"-->
+<!--                android:paddingEnd="24dp"-->
+<!--                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"-->
+<!--                app:spanCount="2"-->
+<!--                android:layout_height="200dp"/>-->
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/rank_list"
+                android:clipToPadding="false"
+                android:clipChildren="false"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:layout_width="match_parent"
+                android:layout_height="900dp" />
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

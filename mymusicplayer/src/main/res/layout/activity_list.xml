@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/list_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/start_red"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/baseline_chevron_left_24">
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/collect_layout"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@color/start_red"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="horizontal"
+        android:paddingRight="15dp"
+        android:paddingLeft="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/list_toolbar">
+<!--        #B2FFFFFF-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="150dp"
+            android:layout_margin="10dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/list_img"
+            app:layout_constraintTop_toBottomOf="@+id/list_desc">
+
+            <TextView
+                android:id="@+id/collect_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:includeFontPadding="false"
+                android:text="0"
+                android:textColor="#B2FFFFFF"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/collect_album_list"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="收藏"
+                android:textColor="#B2FFFFFF"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="@+id/collect_album_list"
+                app:layout_constraintTop_toBottomOf="@+id/collect_album_list" />
+
+            <ImageView
+                android:id="@+id/collect_album_list"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:src="@drawable/baseline_collections_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@+id/list_img"
+            android:layout_width="125dp"
+            android:layout_height="125dp"
+            android:layout_gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/list_name"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:paddingLeft="15dp"
+            android:text="这是一个播放列表"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/list_img"
+            app:layout_constraintTop_toTopOf="@id/list_img" />
+
+        <TextView
+            android:id="@+id/list_desc"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:paddingLeft="15dp"
+            android:text="这是一个歌单的自我介绍swansndonsa ondsaodnboasisbndsadbnsjabdsajdbsakjd"
+            android:textColor="@color/light_grey"
+            android:textSize="10sp"
+            app:layout_constraintStart_toEndOf="@id/list_img"
+            app:layout_constraintTop_toBottomOf="@id/list_name" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <FrameLayout
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="match_parent"
+        android:id = "@+id/list_activity_frame_layout"
+        app:layout_constraintTop_toBottomOf="@+id/collect_layout"
+        android:layout_height="wrap_content">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list_rv"
+            android:paddingTop="25dp"
+            android:paddingBottom="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:background="@drawable/activity_playing_song_background"
+
+            />
+        <include
+            android:id="@+id/load_dialog"
+            layout="@layout/loading_dialog_layout"/>
+
+    </FrameLayout>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:layout_width="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="65dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:id = "@+id/play_music_fragment_in_album"
+        android:name="com.software.mymusicplayer.PlaySongFragment"
+        tools:layout="@layout/play_music_component"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
