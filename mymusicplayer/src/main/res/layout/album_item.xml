@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.software.mymusicplayer.view.ShrinkLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
+    android:background="@drawable/play_music_fragment_background"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/album_img"
+        android:layout_width="210dp"
+        android:layout_height="240dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/album_title"
+        android:layout_width="210dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:background="@drawable/album_title_shape"
+        android:textColor="#C7C2C2"
+        app:layout_constraintBottom_toBottomOf="@+id/album_img"
+        app:layout_constraintStart_toStartOf="parent" />
+</com.software.mymusicplayer.view.ShrinkLayout>

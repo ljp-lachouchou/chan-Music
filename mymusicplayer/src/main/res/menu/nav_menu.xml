@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 第一组 -->
+    <group android:checkableBehavior="none">
+
+        <item
+            android:id="@+id/nav_ringtone"
+            android:icon="@drawable/baseline_music_video_24"
+            android:title="我的铃声"/>
+    </group>
+
+    <!-- 第二组 -->
+    <group android:id="@+id/group_settings">
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/baseline_chevron_right_24"
+            android:title="编辑资料"/>
+    </group>
+
+    <!-- 第三组 -->
+    <group android:id="@+id/group_logout">
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/baseline_self_improvement_24"
+            android:title="退出登录"/>
+    </group>
+</menu>

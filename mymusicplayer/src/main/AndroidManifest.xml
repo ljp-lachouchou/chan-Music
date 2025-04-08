@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!--    文件读写权限-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/>
+    <!-- 可选硬件声明（适配无摄像头设备） -->
+    <uses-feature android:name="android.hardware.camera.any" android:required="false" />
+<!--    &lt;!&ndash; 适配无摄像头设备 &ndash;&gt;-->
+<!--    <uses-feature android:name="android.hardware.camera" android:required="false" />-->
+    <!--android:requestLegacyExternalStorage="true" 不适用作用域存储-->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+<!--    <base-config android:cleartextTrafficPermitted="true"/>-->
+    <application
+        android:allowBackup="true"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:usesCleartextTraffic="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:requestLegacyExternalStorage="true"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyApplication">
+        <profileable android:shell="true"/>
+        <service android:name=".PlayMusicService">
+        </service>
+        <service android:name=".MusicGenService"
+            android:exported="true"
+            android:foregroundServiceType="mediaProcessing"
+            android:permission="android.intent.action.BOOT_COMPLETED">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </service>
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:grantUriPermissions="true"
+            android:exported="false">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"/>
+        </provider>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+        </activity>
+        <activity android:name=".LoginActivity"
+            android:theme="@style/Theme.WhitePageDemoSplash"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+<!--        <activity android:name=".LoginActivity" android:exported="true"/>-->
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="true">
+        </activity>
+        <activity android:name=".FindActivity" android:exported="true"/>
+        <activity android:name=".MusicGenActivity" android:exported="true"/>
+        <activity android:name=".PreEyeActivity" android:exported="true"/>
+        <activity android:name=".ListActivity" android:exported="true"/>
+        <activity android:name=".InsetNoteActivity" android:exported="true"/>
+        <activity android:name=".SongCommentActivity" android:exported="true"/>
+        <activity android:name=".NoteDetailActivity" android:exported="true"/>
+        <activity android:name=".ProfileActivity" android:exported="true"/>
+    </application>
+
+</manifest>

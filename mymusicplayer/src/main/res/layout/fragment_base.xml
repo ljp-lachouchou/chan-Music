@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.scwang.smart.refresh.layout.SmartRefreshLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/fragment_srl"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        >
+        <com.scwang.smart.refresh.header.ClassicsHeader
+            android:layout_width="match_parent"
+            android:id="@+id/fragment_ch"
+            android:layout_height="wrap_content"/>
+
+        <com.scwang.smart.refresh.footer.ClassicsFooter
+            android:id = "@+id/fragment_cf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+</com.scwang.smart.refresh.layout.SmartRefreshLayout>
+

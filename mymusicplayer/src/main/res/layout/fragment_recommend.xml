@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/drawer_layout"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <include layout="@layout/shimmer_layout"
+
+            android:layout_height="150dp"
+            android:layout_width="150dp"
+            android:layout_gravity="center"
+            android:id = "@+id/shimmer"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:padding="3dp"
+            android:id = "@+id/real_layout"
+            android:visibility="gone"
+            android:layout_height="match_parent">
+            <!--    android:background="@drawable/recommend_vp_shape"-->
+
+            <include layout="@layout/search_bar"
+                android:layout_width="match_parent"
+
+                android:layout_height="?attr/actionBarSize"/>
+            <com.scwang.smart.refresh.layout.SmartRefreshLayout
+                android:id="@+id/fragment_srl"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="120dp"
+                >
+                <com.scwang.smart.refresh.header.ClassicsHeader
+                    android:layout_width="match_parent"
+                    android:id="@+id/fragment_ch"
+                    android:layout_height="wrap_content"/>
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:id = "@+id/recommend_scrollView"
+                    android:layout_height="match_parent">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:padding="2dp"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/recommend_album"
+                            android:layout_margin="4dp"
+                            android:textStyle="bold"
+                            android:textSize="24sp"/>
+                        <com.software.mymusicplayer.view.CustomRecyclerView
+                            android:layout_width="match_parent"
+                            android:id = "@+id/recommend_album"
+                            android:padding="4dp"
+                            android:scrollbars="horizontal"
+                            android:scrollbarSize="0dp"
+                            android:layout_height="260dp"/>
+                        <TextView
+                            android:id="@+id/recommend_songs_text_one"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="让我们一起听"
+                            android:layout_margin="4dp"
+                            android:textStyle="bold"
+                            android:textSize="24sp"/>
+                        <!--                    android:clipToPadding="false"        &lt;!&ndash; 允许绘制到Padding区域 &ndash;&gt;-->
+                        <!--                    android:paddingStart="32dp"          &lt;!&ndash; 左侧留白 &ndash;&gt;-->
+                        <!--                    android:paddingEnd="32dp"            &lt;!&ndash; 右侧留白 &ndash;&gt;-->
+                        <androidx.viewpager2.widget.ViewPager2
+                            android:id="@+id/recommend_songs_vp2_one"
+                            android:layout_width="match_parent"
+                            android:clickable="true"
+                            android:layout_height="180dp"
+                            android:clipToPadding="false"
+                            android:paddingStart="16dp"
+                            android:paddingEnd="16dp"
+                            android:focusable="true"
+                            android:padding="5dp" />
+
+                        <TextView
+                            android:id="@+id/my_collect_album_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/my_collect_albums"
+                            android:layout_margin="4dp"
+                            android:textStyle="bold"
+                            android:textSize="24sp"/>
+                        <com.software.mymusicplayer.view.CustomRecyclerView
+                            android:layout_width="match_parent"
+                            android:id = "@+id/my_collect_album"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            android:orientation="horizontal"
+                            android:padding="4dp"
+                            android:scrollbars="horizontal"
+                            android:scrollbarSize="0dp"
+                            android:layout_height="260dp"/>
+                        <TextView
+                            android:id="@+id/recommend_songs_text_two"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="好歌推荐"
+                            android:layout_margin="4dp"
+                            android:textStyle="bold"
+                            android:textSize="24sp"/>
+                        <androidx.viewpager2.widget.ViewPager2
+                            android:id="@+id/recommend_songs_vp2_two"
+                            android:layout_width="match_parent"
+                            android:clickable="true"
+                            android:padding="5dp"
+                            android:focusable="true"
+                            android:clipToPadding="false"
+                            android:paddingStart="16dp"
+                            android:paddingEnd="16dp"
+                            android:layout_height="180dp"/>
+                    </LinearLayout>
+                </ScrollView>
+
+            </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+        </LinearLayout>
+    </FrameLayout>
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:id="@+id/nav_view"
+        android:layout_gravity="start"
+        app:menu="@menu/nav_menu"
+        app:headerLayout="@layout/nav_header"
+        android:layout_height="match_parent"/>
+</androidx.drawerlayout.widget.DrawerLayout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:layout_height="match_parent">
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:src="@drawable/baseline_thumb_up_24"
+        android:layout_height="match_parent"/>
+    <TextView
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:textColor="#C7C2C2"
+        android:text="200200"
+        android:gravity="center"
+        android:layout_height="match_parent"/>
+</LinearLayout>

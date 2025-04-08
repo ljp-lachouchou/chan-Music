@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="150dp"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_gravity="center"
+    android:layout_height="150dp">
+    <ImageView
+        android:id="@+id/dialog_img"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_gravity="center"
+        android:src="@drawable/baseline_self_improvement_24" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:gravity="center_horizontal"
+        android:text="加载中"
+        android:layout_gravity="center"
+        android:textSize="10sp"
+
+        />
+</LinearLayout>

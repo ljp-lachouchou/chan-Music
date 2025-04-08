@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id = "@+id/search_bar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+
+        <EditText
+            android:id="@+id/search_ed"
+            android:layout_width="300dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:hint="@string/search_hint"
+            android:paddingLeft="25dp"
+            android:background="@drawable/search_shape"
+            android:textSize="16sp"
+            android:focusableInTouchMode="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.appcompat.widget.Toolbar>

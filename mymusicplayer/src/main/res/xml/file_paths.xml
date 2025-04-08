@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <files-path name="private_files" path="." />  <!-- 对应 Context.getFilesDir() -->
+    <cache-path name="private_cache" path="." />   <!-- 对应 Context.getCacheDir() -->
+    <external-files-path name="external_private" path="Pictures/" />
+</paths>
